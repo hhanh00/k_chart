@@ -1,6 +1,20 @@
-import 'package:flutter/material.dart' show Color;
+import 'package:flutter/material.dart' show BuildContext, Color, Theme;
 
 class ChartColors {
+  ChartColors({BuildContext? context}) {
+    if (context != null) {
+      final theme = Theme.of(context);
+      final scheme = theme.colorScheme;
+      bgColor = [scheme.background, scheme.background];
+      kLineColor = scheme.primary;
+      lineFillColor = scheme.secondaryVariant;
+      defaultTextColor = scheme.primary;
+      ma5Color = scheme.secondaryVariant;
+      ma10Color = scheme.secondaryVariant;
+      ma30Color = scheme.secondaryVariant;
+    }
+  }
+
   List<Color> bgColor = [Color(0xff18191d), Color(0xff18191d)];
 
   Color kLineColor = Color(0xff4C86CD);
